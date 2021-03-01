@@ -1,0 +1,96 @@
+/* ----------------------------------- Navbar ----------------------------------- */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    padding: 0 0.75rem;
+    background: #fff;
+}
+
+#navbar .hamburger {
+    display: none;
+}
+
+.brand img {
+    width: 90px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    display: none;
+}
+
+.search-bar .magnifier-btn {
+    position: absolute;
+    content: "";
+    right: calc(48px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: transparent;
+    padding: 12px;
+}
+
+.magnifier-btn img {
+    width: 24px;
+}
+
+.icon-button {
+    display: none;
+}
+
+.icons .person {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+/* ----------------------------------- End of Navbar ----------------------------------- */
+
+
+/* ----------------------------------- SideNav ----------------------------------- */
+#aside-nav {
+    display: none;
+}
+/* ----------------------------------- End of SideNav ----------------------------------- */
+
+
+/* ----------------------------------- Video Container ----------------------------------- */
+#videos-container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.video img {
+    width: 100%;
+}
+
+.video-description {
+    display: flex;
+    margin: 0.5rem 0 0.75rem 1rem;
+}
+
+.video-description .description {
+    color: #606060;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 1rem;
+}
+
+.description .title {
+    color: #030303;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.channel-img img {
+    width: 45px;
+    height: 45px;
+}
+/* ----------------------------------- End of Video Container ----------------------------------- */

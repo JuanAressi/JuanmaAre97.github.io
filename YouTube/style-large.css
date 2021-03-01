@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto";
+}
+
+body {
+    background: #f5f5f5;
+}
+
+.container {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+
+@media (min-width: 769px) {
+/* ----------------------------------- Navbar ----------------------------------- */
+#navbar .brand-container {
+    margin-left: 3.75rem;
+    margin-top: 0.5rem;
+}
+
+.brand img {
+    width: 80px;
+}
+
+.search-bar input {
+    display: flex;
+    width: 575px;
+    padding: 0.5rem;
+    border: 1px solid #aaa;
+    border-top-left-radius: 0.125rem;
+    border-bottom-left-radius: 0.125rem;
+}
+
+.search-bar .magnifier-btn {
+    position: inherit;
+    height: 34px;
+    width: 65px;
+    margin-left: -1px;
+    background: #f8f8f8;
+    border: 1px solid #aaa;
+    border-top-right-radius: 0.125rem;
+    border-bottom-right-radius: 0.125rem;
+}
+
+.magnifier-btn img {
+    width: 20px;
+}
+
+.search-bar .microphone {
+    width: 40px;
+    padding: 0.5rem;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+}
+
+.icon-button img {
+    width: 24px;
+    margin-right: 0.5rem;
+}
+
+.icons .person {
+    margin: 0 0.8rem;
+}
+
+
+/* ----------------------------------- Main ----------------------------------- */
+#main {
+    display: flex;
+    position: relative;
+}
+
+#main .toggler, 
+#main .bars {
+    position: absolute;
+    top: -45px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    padding: 0.5rem;
+}
+
+#main .toggler {
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Hide menu effect */
+#main .toggler:checked ~ #aside-nav  {
+    width: 72px;
+    padding: 0;
+    border-bottom: 0;
+}
+
+#main .toggler:checked ~ #aside-nav ul {
+    padding: 0;
+    border-bottom: 0;
+}
+
+#main .toggler:checked ~ #aside-nav .first-ul {
+    padding-top: 0.75rem;
+}
+
+#main .toggler:checked ~ #aside-nav li {
+    display: none;
+}
+
+#main .toggler:checked ~ #aside-nav .li-toggler {
+    display: flex;
+    flex-direction: column;
+    width: 72px;
+    padding: 8px 0 13px 0;
+}
+
+#main .toggler:checked ~ #aside-nav .li-toggler p {
+    font-size: 10px;
+    margin-left: 0;
+}
+
+#main .toggler:checked ~ #aside-nav .li-toggler svg,
+#main .toggler:checked ~ #aside-nav .li-toggler p {
+    margin-left: 0;
+}
+
+#main .toggler:checked ~ #aside-nav .active {
+    background: transparent;
+}
+
+#main .toggler:checked ~ #aside-nav .active p {
+    color: #c00;
+}
+
+#main .toggler:checked ~ #aside-nav .active:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+/* End of hide menu effect */
+
+
+/* ----------------------------------- SideNav ----------------------------------- */
+#aside-nav {
+    display: block;
+    background: #fff;
+    width: 662.3px;
+}
+
+#aside-nav ul {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#aside-nav li {
+    display: flex;
+    align-items: center;
+    font-size: 1;
+}
+
+#aside-nav li svg {
+    left: 20px;
+    width: 40px;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    fill: #606060;
+}
+
+#aside-nav li p {
+    margin-left: 1rem;
+    font-size: 14px;
+}
+
+#aside-nav .active {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#aside-nav .active svg {
+    fill: #f00;
+}
+
+#aside-nav .active p {
+    font-weight: 500;
+}
+
+#aside-nav .active:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+#aside-nav li:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* ----------------------------------- End of SideNav ----------------------------------- */
+
+
+/* ----------------------------------- Grid ----------------------------------- */
+#videos-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    padding: 1.5rem;
+}
+/* ----------------------------------- End of Grid ----------------------------------- */
+/* ----------------------------------- End of Main ----------------------------------- */
+
+
+    
+}

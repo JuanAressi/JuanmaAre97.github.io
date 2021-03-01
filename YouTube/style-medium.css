@@ -1,0 +1,13 @@
+@media (min-width: 480px) {
+    /* ----------------------------------- Video Container ----------------------------------- */
+    #videos-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+        padding: 1rem;
+    }
+
+    .video-description {
+        margin: 0.5rem 0 1rem 0;
+    }
+    /* ----------------------------------- End of Video Container ----------------------------------- */
+}
