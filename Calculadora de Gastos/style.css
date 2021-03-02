@@ -1,0 +1,104 @@
+.btn-gray {
+    background: #aaa;
+    color: #000;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 12fr;
+    grid-gap: 1rem;
+}
+
+.title-person {
+    position: relative;
+    grid-column: 2/3;
+    grid-row: 1;
+}
+
+.title-person h2 {
+    margin-right: 80px;
+}
+
+.title-person button {
+    position: absolute;
+    right: 0;
+}
+
+.title-food {
+    position: relative;
+    grid-column: 1;
+    grid-row: 2/3;
+    min-height: 150px;
+}
+
+.title-food button {
+    position: absolute;
+    bottom: 1rem;
+}
+
+.table {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.input-group-text {
+    width: 50px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.elements {
+    position: relative;
+}
+
+.elements .fas {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 33%;
+}
+
+.elements:hover .fas {
+    display: inline;
+}
+
+.elements .fa-pencil {
+    margin-right: 2rem;
+}
+
+th.text-right {
+    max-width: 75px;
+}
+
+#calcuarTotal {
+    padding: 0.75rem 0;
+}
+
+
+/* Modals */
+label {
+    font-size: 1.25rem;
+}
+
+.invalid-feedback {
+    display: none;
+}
+
+.form-control.is-invalid .invalid-feedback {
+    display: block;
+}
+
+#addFoodToList, 
+#actualizarFood {
+    display: none;
+}
+
+#personAddTitle, 
+#actualizarPerson,
+#btnEliminarPago,
+#foodEditTitle, 
+#labelAdd {
+    display: none;
+}
