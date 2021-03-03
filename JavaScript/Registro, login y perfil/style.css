@@ -1,0 +1,8 @@
+body {
+    height: 100vh;
+}
+
+.container {
+    width: 500px;
+    border-radius: 0.5rem;
+}
