@@ -1,21 +1,30 @@
 document.getElementById('login').addEventListener('click', function(e) {
-    // Get user from LS
-    let lsUsuario = localStorage.getItem("usuario");
-    let usuario = JSON.parse(lsUsuario);
+    // Get List Usuarios from LS
+    let listaUsuario = getListUsuarios();
 
-    // Validation
+    // Get input info
     let user = document.getElementById('usuario').value;
     let pass = document.getElementById('contraseña').value;
 
-    if (user == usuario.user) {
-        if (pass == usuario.pass) {
-            window.location.replace("./perfil.html");
-        } else {
-            alert("contraseña incorrecta");
-        }
+    // Validation
+    if (validarUsuario(listaUsuario, user, pass)) { 
+        alert("Logueo exitoso"); 
+        window.location.href = "./perfil.html";
     } else {
-        alert("usuario incorrecto");
+        alert("Usuario no encontrdo o contraseña incorrecta");
     }
 
     e.preventDefault();
 });
+
+function validarUsuario(listaUsuario, user, pass) {
+    let exist = false;
+
+    listaUsuario.forEach(usuario => {
+        if (usuario.user == user && usuario.pass == pass) {
+            exist = true;
+        }
+    });
+
+    return exist;
+}
