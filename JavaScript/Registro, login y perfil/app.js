@@ -63,7 +63,7 @@ function getListUsuarios() {
     return listaUsuario;
 }
 
-function usuarioExistente(usuario ,listaUsuario) {
+function usuarioExistente(usuario, listaUsuario) {
     let exist = false;
 
     listaUsuario.forEach(user => {

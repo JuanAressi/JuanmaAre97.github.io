@@ -7,8 +7,14 @@ document.getElementById('login').addEventListener('click', function(e) {
     let pass = document.getElementById('contraseña').value;
 
     // Validation
-    if (validarUsuario(listaUsuario, user, pass)) { 
+    let newUser = validarUsuario(listaUsuario, user, pass); 
+    if (newUser != undefined) {
         alert("Logueo exitoso"); 
+
+        // Save user in LS
+        saveUser(newUser);
+
+        // Move to perfil.html
         window.location.href = "./perfil.html";
     } else {
         alert("Usuario no encontrdo o contraseña incorrecta");
@@ -18,13 +24,17 @@ document.getElementById('login').addEventListener('click', function(e) {
 });
 
 function validarUsuario(listaUsuario, user, pass) {
-    let exist = false;
+    let newUser;
 
     listaUsuario.forEach(usuario => {
         if (usuario.user == user && usuario.pass == pass) {
-            exist = true;
+            newUser = usuario;
         }
     });
 
-    return exist;
+    return newUser;
+}
+
+function saveUser(newUser) {
+    localStorage.setItem("usuario", JSON.stringify(newUser));
 }
