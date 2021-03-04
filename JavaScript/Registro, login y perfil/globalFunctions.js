@@ -3,25 +3,20 @@ function createUser() {
     const pass = document.getElementById('contraseña').value;
     const mail = document.getElementById('mail').value;
     const tel = document.getElementById('telefono').value;
+    const admin = document.getElementById('admin').checked;
 
     let usuario = {
         user,
         pass,
         mail,
-        tel
+        tel,
+        admin 
     }
 
     return usuario;
 }
 
-function getListUsuarios() {
-    let lsListaUsuario = localStorage.getItem("listaUsuario");
-    let listaUsuario = JSON.parse(lsListaUsuario);
-    
-    return listaUsuario;
-}
-
-function usuarioExistente(usuario ,listaUsuario) {
+function usuarioExistente(usuario, listaUsuario) {
     let exist = false;
 
     listaUsuario.forEach(user => {
@@ -33,6 +28,26 @@ function usuarioExistente(usuario ,listaUsuario) {
     return exist;
 }
 
-function saveListUser(listaUsuario) {
-    localStorage.setItem("listaUsuario", JSON.stringify(listaUsuario));
+function getListUsuarios() {
+    let lsListaUsuario = localStorage.getItem("listaUsuario");
+    let listaUsuario;
+
+    if (lsListaUsuario) {
+        listaUsuario = JSON.parse(lsListaUsuario);
+    } else {
+        listaUsuario = [];
+    }
+    
+    return listaUsuario;
+}
+
+function getFromLS(key) {
+    let lsItem = localStorage.getItem(key);
+    let item = JSON.parse(lsItem);
+
+    return item;
+}
+
+function saveInLS(text, item) {
+    localStorage.setItem(text, JSON.stringify(item));
 }

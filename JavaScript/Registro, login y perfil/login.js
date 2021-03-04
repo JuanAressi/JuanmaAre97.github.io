@@ -12,8 +12,8 @@ document.getElementById('login').addEventListener('click', function(e) {
         alert("Logueo exitoso"); 
 
         // Save user in LS
-        saveUser(newUser);
-
+        saveInLS("usuario", newUser)
+        
         // Move to perfil.html
         window.location.href = "./perfil.html";
     } else {
@@ -33,8 +33,4 @@ function validarUsuario(listaUsuario, user, pass) {
     });
 
     return newUser;
-}
-
-function saveUser(newUser) {
-    localStorage.setItem("usuario", JSON.stringify(newUser));
 }

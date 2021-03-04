@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
-    <title>Registro</title>
+    <title>Editor Usuario</title>
 </head>
 <body class="d-flex align-items-center bg-primary">
     <div class="container bg-white p-5">
-        <h1 class="text-center mb-4">Registrese en nuestro sitio web</h1>
+        <h1 class="text-center mb-4">Editor de Usuarios</h1>
 
         <form action="" class="form">
             <div class="form-group">
@@ -30,7 +30,7 @@
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="mail">
+                <input type="email" class="form-control" id="mail" disabled>
             </div>
             
             <div class="form-group">
@@ -53,11 +53,13 @@
                 </div>
             </div>
 
-            <button id="register" class="btn btn-block btn-primary mt-5">Registrarse</button>
+            
+            <button id="modify" class="btn btn-block btn-primary mt-5">Guardar Datos</button>
+            <button id="delete" class="btn btn-block btn-danger mt-3">Eliminar Usuario</button>
         </form>
     </div>
 
     <script src="globalFunctions.js"></script>
-    <script src="app.js"></script>
+    <script src="editUsuario.js"></script>
 </body>
 </html>
