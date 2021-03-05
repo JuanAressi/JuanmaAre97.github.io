@@ -5,18 +5,23 @@ const position = getFromLS("position");
 let usuario = getFromLS("userToEdit");
 
 window.onload = function() {
-    
     // Get data
     const user = document.getElementById('usuario');
     const pass = document.getElementById('contraseña');
     const mail = document.getElementById('mail');
     const tel = document.getElementById('telefono');
-    const admin = document.getElementById('admin');
+    let admin;
+
+    if (usuario.admin) {
+        admin = document.getElementById('admin');
+    } else {
+        admin = document.getElementById('noAdmin');
+    }
 
     user.value = usuario.user;
     pass.value = usuario.pass;
     mail.value = usuario.mail;
-    tel.value = usuario.tel;
+    tel.value = usuario.tel;    
     admin.checked = true;
 }    
 

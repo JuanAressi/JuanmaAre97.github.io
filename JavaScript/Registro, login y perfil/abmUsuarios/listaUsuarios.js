@@ -1,5 +1,5 @@
 // Get List Usuarios from LS
-const listaUsuario = getListUsuarios();
+const listaUsuario = getListOfElements("listaUsuario");
 
 // Select tbody
 const tbody = document.querySelector('tbody');
@@ -33,7 +33,8 @@ tbody.addEventListener('click', function(e) {
     const position = (+e.target.parentElement.firstElementChild.innerText - 1);
 
     // Save user in LS
-    saveInLS("userToEdit", listaUsuario[position])
+    let usuario = listaUsuario[position];
+    saveInLS("userToEdit", usuario);
 
     // Save position in LS
     saveInLS("position", (position));

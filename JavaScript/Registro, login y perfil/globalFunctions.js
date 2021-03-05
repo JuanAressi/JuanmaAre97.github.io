@@ -28,17 +28,17 @@ function usuarioExistente(usuario, listaUsuario) {
     return exist;
 }
 
-function getListUsuarios() {
-    let lsListaUsuario = localStorage.getItem("listaUsuario");
-    let listaUsuario;
+function getListOfElements(key) {
+    let lsLista = localStorage.getItem(key);
+    let lista;
 
-    if (lsListaUsuario) {
-        listaUsuario = JSON.parse(lsListaUsuario);
+    if (lsLista) {
+        lista = JSON.parse(lsLista);
     } else {
-        listaUsuario = [];
+        lista = [];
     }
     
-    return listaUsuario;
+    return lista;
 }
 
 function getFromLS(key) {

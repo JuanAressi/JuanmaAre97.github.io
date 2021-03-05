@@ -1,0 +1,12 @@
+.container {
+    width: 1000px;
+}
+
+tbody {
+    cursor: pointer;
+}
+
+button {
+    width: 2.5rem;
+    height: 2.5rem;
+}
