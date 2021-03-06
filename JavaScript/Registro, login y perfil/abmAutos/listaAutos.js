@@ -24,14 +24,14 @@ tbody.addEventListener('click', function(e) {
     const position = (+e.target.parentElement.firstElementChild.innerText - 1);
 
     // Save user in LS
-    let usuario = listaAutos[position];
-    saveInLS("userToEdit", usuario);
+    let autos = listaAutos[position];
+    saveInLS("autoToEdit", autos);
 
     // Save position in LS
     saveInLS("position", (position));
 
     // Move to perfil.html
-    window.location.href = "./editUsuario.html";
+    window.location.href = "./editAuto.html";
 });
 
 document.getElementById('backToPerfil').addEventListener('click', function() {    

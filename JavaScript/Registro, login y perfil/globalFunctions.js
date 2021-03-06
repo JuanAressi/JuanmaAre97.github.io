@@ -36,6 +36,7 @@ function getListOfElements(key) {
         lista = JSON.parse(lsLista);
     } else {
         lista = [];
+        localStorage.setItem(key, JSON.stringify(lista));
     }
     
     return lista;
@@ -50,4 +51,22 @@ function getFromLS(key) {
 
 function saveInLS(text, item) {
     localStorage.setItem(text, JSON.stringify(item));
+}
+
+function createAuto() {
+    const marca = document.getElementById('marca').value;
+    const modelo = document.getElementById('modelo').value;
+    const año = document.getElementById('año').value;
+    const color = document.getElementById('color').value;
+    const patente = document.getElementById('patente').value;
+
+    let auto = {
+        marca,
+        modelo,
+        año,
+        color,
+        patente 
+    }
+
+    return auto;
 }

@@ -27,7 +27,7 @@ document.getElementById('listaAutos').addEventListener('click', function(e) {
 
 // LogOut
 document.getElementById('logOut').addEventListener('click', function(e) {
-    window.location.href = "./login.html";    
+    window.location.href = "./index.html";    
 
     e.preventDefault();
 })
