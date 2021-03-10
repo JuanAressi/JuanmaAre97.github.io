@@ -4,8 +4,6 @@ document.getElementById('añadirAuto').addEventListener('click', function(e) {
     // Get listaAutos from LS
     let listaAutos = getListOfElements('listaAutos');
 
-    console.log(listaAutos);
-
     // Update listaAutos
     listaAutos.push(auto);
 

@@ -9,32 +9,31 @@ window.onload = function() {
 
     const tipoDelAtributo = ['text', 'text', 'number', 'text', 'text'];
 
-    // Get list from LS
-    let lista = getFromLS('listaAutos');
-
-    const saveItem = (e, lista) => {
+    const button1 = (e) => {
         // Get position from LS
         const position = getFromLS('position');
 
         // Save data from inputs
         item = createAuto();
 
+        // Get list from LS
+        let lista = getFromLS('listaAutos');
+
         // Save item
         lista[position] = item;
     
         // Save listaUsuario in LS
         saveInLS('listaAutos', lista);
-
         
         alert('Fue modificado exitosamente');
         
         // Move to listaGenerica.html
-        window.location.href = './listaGenerica.html';
+        window.location.href = './listaAutos.html';
 
         e.preventDefault();
     }
 
-    const addItem = (e) => {
+    const button2 = (e) => {
         // Get position from LS
         const position = getFromLS('position');
 
@@ -54,5 +53,17 @@ window.onload = function() {
         e.preventDefault();
     }
 
-    renderizarHTML(body, titulo, item, atributos, tipoDelAtributo, saveItem, addItem);
+    renderizarHTML(body, titulo, atributos, tipoDelAtributo, button1, button2);
+
+    initInputs(item, atributos);
 }
+
+function initInputs(item, atributos) {
+    // Get list of input loaded
+    let inputArray = document.querySelectorAll('input');
+
+    // Load the info
+    for (let i = 0; i < inputArray.length; i++) {
+        inputArray[i].value = item[atributos[i]];
+    }
+} 

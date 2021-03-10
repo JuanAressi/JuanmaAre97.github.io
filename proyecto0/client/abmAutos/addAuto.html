@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <title>Alta de Auto</title>
+</head>
+<body class="d-flex align-items-center bg-primary">
+    <div class="container bg-white p-5">
+        <h1 class="text-center mb-4">Alta de Auto</h1>
+
+        <form action="" class="form">
+            <div class="form-group">
+                <label for="marca">Marca</label>
+                <input type="text" class="form-control" id="marca">
+            </div>
+            
+            <div class="form-group">
+                <label for="modelo">Modelo</label>
+                <input type="text" class="form-control" id="modelo">
+            </div>
+            
+            <div class="form-group">
+                <label for="año">Año</label>
+                <input type="number" class="form-control" id="año">
+            </div>
+            
+            <div class="form-group">
+                <label for="color">Color</label>
+                <input type="text" class="form-control" id="color">
+            </div>
+            
+            <div class="form-group">
+                <label for="patente">Patente</label>
+                <input type="text" class="form-control" id="patente">
+            </div>
+
+            <button id="añadirAuto" class="btn btn-block btn-primary mt-5">Agregar Auto</button>
+            <button id="volverAtras" class="btn btn-block btn-secondary">Volver al Listado</button>
+        </form>
+    </div>
+
+    <script src="../globalFunctions.js"></script>
+    <script src="./addAuto.js"></script>
+</body>
+</html>

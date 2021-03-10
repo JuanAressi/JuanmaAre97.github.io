@@ -1,62 +1,57 @@
-// Get Position from LS
-const position = getFromLS("position");
-
-// Get User from LS
-let auto = getFromLS("autoToEdit");
-
 window.onload = function() {
-    // Get data
-    const marca = document.getElementById('marca');
-    const modelo = document.getElementById('modelo');
-    const año = document.getElementById('año');
-    const color = document.getElementById('color');
-    const patente = document.getElementById('patente');
-
-    marca.value = auto.marca;
-    modelo.value = auto.modelo;
-    año.value = auto.año;
-    color.value = auto.color;    
-    patente.value = auto.patente;
-}    
-
-
-// Modify
-document.getElementById('modify').addEventListener('click', function(e) {
-    // Save user
-    auto = createAuto();
-
-    // Get listaAutos from LS
-    let listaAutos = getFromLS('listaAutos');
-
-    // Validar
-    listaAutos[position] = auto;
-
-    // Save listaUsuario in LS
-    saveInLS("listaAutos", listaAutos);
-
-    alert("El auto fue modificado exitosamente");
-
-    // Move to perfil.html
-    window.location.href = "./listaAutos.html";
-
-    e.preventDefault();
-});
-
-
-// Delete
-document.getElementById('delete').addEventListener('click', function(e) {
-    // Get listaAutos from LS
-    let listaAutos = getFromLS('listaAutos')
-
-    listaAutos.splice(position, 1);
-
-    // Save listaAutos in LS
-    saveInLS("listaAutos", listaAutos);
-
-    alert("Auto eliminado");
-
-    // Move to perfil.html
-    window.location.href = "./listaAutos.html";
+    let body = document.querySelector('body');
     
-    e.preventDefault();
-});
+    const titulo = 'Editor de Autos';
+
+    let item = getFromLS('autoToEdit');
+
+    const atributos = ['marca', 'modelo', 'año', 'color', 'patente'];
+
+    const tipoDelAtributo = ['text', 'text', 'number', 'text', 'text'];
+
+    const saveItem = (e) => {
+        // Get position from LS
+        const position = getFromLS('position');
+
+        // Save data from inputs
+        item = createAuto();
+
+        // Get list from LS
+        let lista = getFromLS('listaAutos');
+
+        // Save item
+        lista[position] = item;
+    
+        // Save listaUsuario in LS
+        saveInLS('listaAutos', lista);
+        
+        alert('Fue modificado exitosamente');
+        
+        // Move to listaGenerica.html
+        window.location.href = './listaAutos.html';
+
+        e.preventDefault();
+    }
+
+    const addItem = (e) => {
+        // Get position from LS
+        const position = getFromLS('position');
+
+        // Get list from LS
+        let lista = getFromLS('listaAutos');
+
+        lista.splice(position, 1);
+
+        // Save lista in LS
+        saveInLS('listaAutos', lista);
+
+        alert('Eliminado');
+
+        // Move to listaGenerica.html
+        window.location.href = './listaGenerica.html';
+        
+        e.preventDefault();
+    }
+
+    renderizarHTML(body, titulo, item, atributos, tipoDelAtributo, saveItem, addItem);
+}
