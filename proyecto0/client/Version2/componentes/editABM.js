@@ -1,4 +1,4 @@
-function renderizarHTML_Edit(divEditaABM, titulo, atributos, tipoDelAtributo, actualizarItem) {
+function renderizarHTML_Edit(divEditaABM, titulo, atributos, tipoDelAtributo, actualizarItem, form) {
     // Generar el HTML
     divEditaABM.innerHTML += getTemplateEdit(titulo, atributos, tipoDelAtributo, actualizarItem);    
 
@@ -11,7 +11,7 @@ function renderizarHTML_Edit(divEditaABM, titulo, atributos, tipoDelAtributo, ac
     // Eliminar
 }
 
-function getTemplateEdit(titulo, atributos, tipoDelAtributo) {
+function getTemplateEdit(titulo, atributos, tipoDelAtributo, form) {
     let texto = '';
 
     for (let i = 0; i < atributos.length; i++) {
@@ -28,12 +28,14 @@ function getTemplateEdit(titulo, atributos, tipoDelAtributo) {
     <div class="container bg-white p-5">
         <h1 class="text-center mb-4">${titulo}</h1>
 
-        <form action="" class="form">
+        <form action="${form}" class="form">
             ${texto}
             
             <button id="save" class="btn btn-block btn-primary mt-5" type="button">Actualizar</button>
             <button id="delete" class="btn btn-block btn-danger mt-3" type="button">Eliminar</button>
-            </form>
+            <button id="add" class="btn btn-block btn-primary mt-5" type="button">Agregar</button>
+            <button id="goBack" class="btn btn-block btn-secondary mt-3" type="button">Volver al Listado</button>
+        </form>
     </div>
 `;
 
